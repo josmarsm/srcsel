@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition template="templates/common.xhtml">	
+            <ui:define name="content">
+                <div class="column span-24 last" id="area_rastro">
+
+                    <div id="titulo_rastro" style="float:left; width:700px;">
+                        <div class="labelRastro">VocÃƒÂª estÃƒÂ¡ aqui:</div><ul id="j_idt137" class="caminhoPao">	
+                            <li id="j_idt137:itemPaginaInicial" class="last">
+                                <a id="j_idt137:itemPaginaInicial:link" href="#">PÃƒÂ¡gina inicial</a></li></ul>
+                    </div>
+                    <div id="botoes_rastro" style="float:right">
+                        <form id="j_idt142" name="j_idt142" method="post" action="/novoscdp/pages/main.xhtml" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="j_idt142" value="j_idt142"/>
+
+                            <div style="float: right;">
+                                <div class="toolbarIconContainer column">
+                                    <a id="j_idt142:linkDiminuirFonte" href="javascript:void(0);" onclick="resize(-1);
+                                            return false;
+                                            ;
+                                            PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/main.xhtml', {formId: 'j_idt142', async: false, global: true, source: 'j_idt142:linkDiminuirFonte', process: '@all'});" title="Diminuir fonte" type="button">
+                                        <img src="/novoscdp/resources/images/toolbar/diminuir.png" alt="Diminuir fonte" height="21" width="21"/></a>								
+                                </div>
+
+                                <div class="toolbarIconContainer column">
+                                    <a id="j_idt142:linkAumentarFonte" href="javascript:void(0);" onclick="resize(1);
+                                            return false;
+                                            ;
+                                            PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/main.xhtml', {formId: 'j_idt142', async: false, global: true, source: 'j_idt142:linkAumentarFonte', process: '@all'});" title="Aumentar fonte" type="button">
+                                        <img src="/novoscdp/resources/images/toolbar/aumentar.png" alt="Aumentar fonte" height="21" width="21"/></a>
+                                </div>
+
+                                <div class="toolbarSeparador column"></div>
+
+                                <div class="toolbarIconContainer column">
+                                    <script type="text/javascript" src="/novoscdp/javax.faces.resource/jsf.js.xhtml?ln=javax.faces"></script>
+                                    <a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt142'), {'j_idt142:j_idt148': 'j_idt142:j_idt148'}, '');
+                                            return false">
+                                        <img src="/novoscdp/resources/images/toolbar/home.png" alt="Home" height="21" title="Home" width="21"/></a>				
+                                </div>
+
+                                <div id="divAlvo" class="toolbarIconContainer column">
+
+                                    <script type="text/javascript">
+
+                                        function toggleDialog() {
+                                            //Descobre se a janela esta visivel				
+                                            if (jQuery('[id$=smnIdDialog]').is(":visible")) {
+                                                dls.hide();
+                                            } else {
+                                                dls.show();
+                                            }
+                                        }
+
+                                        jQuery(document).click(function (event) {
+                                            //Adiciona ao documento um evento para fechar a janela caso ela esteja aberta ao clicar fora da janela do componente.		
+                                            if (jQuery('[id$=smnIdDialog]').is(":visible")) {
+                                                if (!(jQuery(event.target).parents().index(jQuery("[id$=smnCompArea]")) >= 0)) {
+                                                    dls.hide();
+                                                }
+                                            }
+
+                                            event.stopPropagation();
+                                        });
+
+
+                                    </script>
+
+                                    <div id="smnCompArea" style="position:relative">
+
+                                        <div id="smnIdIconContainer" class="smnIconContainer" onclick="toggleDialog();">
+                                            <span id="j_idt142:j_idt151:smnIdCounterContainer"><span class="smnMessageCount">2</span></span><a id="j_idt142:j_idt151:linkSysMsg" href="javascript:void(0);" onclick="return false;
+                                                    ;
+                                                    PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/main.xhtml', {formId: 'j_idt142', async: false, global: true, source: 'j_idt142:j_idt151:linkSysMsg', process: '@all'});" title="Mensagens de Sistema" type="button">
+                                                <img src="/novoscdp/resources/images/toolbar/system_messenger.png" alt="Mensagens de Sistema" height="21" width="21" class="smnIcon"/></a>		
+                                        </div><script type="text/javascript">jQuery(function () {
+                                                dls = new PrimeFaces.widget.Dialog('j_idt142:j_idt151:smnIdDialog', {autoOpen: false, minHeight: 0, dialogClass: 'smnDialog', width: 340, draggable: false, resizable: false, closable: false, onShow: function (event, ui) {
+                                                        jQuery('#smnIdIconContainer').addClass('smnToolbarIconContainer_clicked');
+                                                    }, onHide: function (event, ui) {
+                                                        jQuery('#smnIdIconContainer').removeClass('smnToolbarIconContainer_clicked');
+                                                    }});
+                                            });</script>
+
+                                        <div class="ui-dialog ui-widget ui-widget-content ui-corner-all smnDialog" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_idt142:j_idt151:smnIdDialog" id="j_idt142:j_idt151:smnIdDialog" style="display: none; z-index: 1000; outline: 0px;">
+                                            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                                                <span class="ui-dialog-title" id="ui-dialog-title-j_idt142:j_idt151:smnIdDialog">Mensagens de Sistema</span>
+                                                <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;">
+                                                    <span class="ui-icon ui-icon-closethick">close</span></a></div>
+                                            <div style="" class="ui-dialog-content ui-widget-content">
+                                                <span id="j_idt142:j_idt151:smnDialogBody">
+                                                    <a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt142'), {'j_idt142:j_idt151:j_idt157:0:j_idt158': 'j_idt142:j_idt151:j_idt157:0:j_idt158'}, '');
+                                                            return false">
+                                                        <div class="linhaMensagem  linhaMensagemNova">
+                                                            <span title="LATAM - ALTERAÃƒâ€¡ÃƒÆ’O DO HORÃƒï¿½RIO DE CHECK-IN">LATAM - ALTERAÃƒâ€¡ÃƒÆ’O DO HORÃƒï¿½RIO DE ...</span>
+                                                            <div class="smnHoraMensagem">12/08/2016<br/>3 dia(s)
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt142'), {'j_idt142:j_idt151:j_idt157:1:j_idt158': 'j_idt142:j_idt151:j_idt157:1:j_idt158'}, '');
+                                                            return false">
+                                                        <div class="linhaMensagem  linhaMensagemNova">
+                                                            <span title="GC - Gerenciamento das unidades administrativas - SIORG">GC - Gerenciamento das unidades ...</span>
+                                                            <div class="smnHoraMensagem">05/08/2016<br/>10 dia(s)
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <div class="smnRodape">
+                                                        <a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt142'), {'j_idt142:j_idt151:j_idt169': 'j_idt142:j_idt151:j_idt169'}, '');
+                                                                return false">Mostrar todas mensagens</a>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> 	
+
+                                    <script type="text/javascript">
+                                        jQuery(document).ready(function () {
+                                            //iniciarPoll();
+                                        });
+
+                                        /* Inicia o poll que obtem as mensagens de sistema. */
+                                        function iniciarPoll() {
+                                            //mPoll.start(); 		
+                                        }
+
+                                        /* Apos alguns minutos de inatividade o poll ÃƒÂ© parado. Ele volta assim que algum link ÃƒÂ© clicado na tela. */
+                                        function pararPoll() {
+                                            //mPoll.stop();
+                                        }
+
+                                    </script>
+                                </div>				
+
+                                <div class="toolbarSeparador column"></div>
+
+                                <div class="toolbarIconContainer column">
+                                    <a id="j_idt142:linkApresentacoes" href="javascript:void(0);" onclick="vMostrarAguarde = false;
+                                            popupVideos.show();
+                                            PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/main.xhtml', {formId: 'j_idt142', async: false, global: true, source: 'j_idt142:linkApresentacoes', process: '@all'});" title="VÃƒÂ­deos de ApresentaÃƒÂ§ÃƒÂµes" type="button">
+                                        <img src="/novoscdp/resources/images/toolbar/videos.png" alt="VÃƒÂ­deos de ApresentaÃƒÂ§ÃƒÂµes"/></a>
+                                </div>	
+
+                                <div class="toolbarIconContainer column">
+                                    <a id="j_idt142:linkDownload" href="javascript:void(0);" onclick="vMostrarAguarde = false;
+                                            popupAjuda.show();
+                                            PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/main.xhtml', {formId: 'j_idt142', async: false, global: true, source: 'j_idt142:linkDownload', process: '@all'});" title="Manuais do Sistema" type="button">
+                                        <img src="/novoscdp/resources/images/icon_ajuda.gif" alt="Manuais do Sistema" title="Ajuda"/></a>
+                                </div>
+
+                                <div class="toolbarIconContainer column"><a href="mailto:suporte.scdp@planejamento.gov.br">
+                                        <img src="/novoscdp/resources/images/toolbar/contato.png" alt="Contato" height="21" title="Contato" width="21"/></a>
+                                </div>
+
+                            </div>
+                            <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="6377146524913919677:7836081229798639944" autocomplete="off"/>
+                        </form>
+
+                        <style type="text/css">
+                            table.doc-apoio tr td{
+                                border-bottom: 1px solid #DDDDDD;
+                            }
+                        </style><script type="text/javascript">jQuery(function () {
+                                popupAjuda = new PrimeFaces.widget.Dialog('j_idt181:pnAjuda', {autoOpen: false, minHeight: 0, dialogClass: 'scdp', width: 440, modal: true, resizable: false});
+                            });</script>
+
+                        <style type="text/css">
+                            .linha_video{
+                                border-bottom: 1px solid #D3D3D3;
+                                display: block;
+                                margin: 0;
+                                overflow: hidden;
+                                padding: 10px;
+                                width: 540px;	
+                                height: 75px;
+                            }
+
+                            .thumbnail_video{
+                                float:left;
+                                width: 120px;
+                            }
+
+                            .titulo_video{
+                                float:left;
+                                width: 400px;
+                            }
+
+                            .titulo_video a{
+                                text-decoration: none;
+                                font-size: 0.8em;
+                                color: #0066CC;
+                            }
+
+                            .titulo_video a:HOVER{
+                                text-decoration: underline;
+                            }
+
+                            .data_video{
+                                color: gray;
+                                font-size: 0.6em;
+                            }
+                        </style><script type="text/javascript">jQuery(function () {
+                                popupVideos = new PrimeFaces.widget.Dialog('j_idt193:pnVideos', {autoOpen: false, minHeight: 0, dialogClass: 'scdp', width: 600, height: 400, modal: true, resizable: false});
+                            });</script>
+                        <div class="ui-dialog ui-widget ui-widget-content ui-corner-all scdp ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_idt181:pnAjuda" id="j_idt181:pnAjuda" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-j_idt181:pnAjuda">DocumentaÃƒÂ§ÃƒÂ£o de Apoio</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div style="" class="ui-dialog-content ui-widget-content">
+
+                            </div>
+                        </div>
+                        <div class="ui-dialog ui-widget ui-widget-content ui-corner-all scdp ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-j_idt193:pnVideos" id="j_idt193:pnVideos" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-j_idt193:pnVideos">VÃƒÂ­deos de ApresentaÃƒÂ§ÃƒÂµes</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div style="" class="ui-dialog-content ui-widget-content">
+                                <form id="j_idt193:formVideos" name="j_idt193:formVideos" method="post" action="/novoscdp/pages/main.xhtml" enctype="application/x-www-form-urlencoded">
+                                    <input type="hidden" name="j_idt193:formVideos" value="j_idt193:formVideos"/>
+
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_capacitacao_copa_mundo.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video26.html" target="blank" title="Abrir vÃƒÂ­deo">CapacitaÃƒÂ§ÃƒÂ£o SCDP - alteraÃƒÂ§ÃƒÂµes do SCDP para Copa do Mundo Fifa 2014</a>
+                                            <div class="data_video">Publicado em 22/05/2014</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_gestores_setoriais.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video20.html" target="blank" title="Abrir vÃƒÂ­deo">ApresentaÃƒÂ§ÃƒÂ£o da Nova VersÃƒÂ£o SCDP para Gestores Setoriais</a>
+                                            <div class="data_video">Publicado em 20/03/2014</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_aula1.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video10.html" target="blank" title="Abrir vÃƒÂ­deo">VÃƒÂ­deo Aula 01</a>
+                                            <div class="data_video">Publicado em 22/11/2013</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_aula2.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video11.html" target="blank" title="Abrir vÃƒÂ­deo">VÃƒÂ­deo Aula 02</a>
+                                            <div class="data_video">Publicado em 22/11/2013</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_aula3-parte1.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video12.html" target="blank" title="Abrir vÃƒÂ­deo">VÃƒÂ­deo Aula 03 - Parte 1</a>
+                                            <div class="data_video">Publicado em 22/11/2013</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_aula3-parte2.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video13.html" target="blank" title="Abrir vÃƒÂ­deo">VÃƒÂ­deo Aula 03 - Parte 2</a>
+                                            <div class="data_video">Publicado em 22/11/2013</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="linha_video">					
+                                        <div class="thumbnail_video"><img src="/novoscdp/resources/images/thumbnail/video_nova_versao.png"/>					
+                                        </div>
+                                        <div class="titulo_video">
+                                            <a href="http://assiste.serpro.gov.br/mp/video8.html" target="blank" title="Abrir vÃƒÂ­deo">ApresentaÃƒÂ§ÃƒÂ£o da Nova VersÃƒÂ£o do sistema SCDP</a>
+                                            <div class="data_video">Publicado em 20/10/2013</div>
+                                        </div>
+                                    </div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="6377146524913919677:7836081229798639944" autocomplete="off"/>
+                                </form></div></div></div>
+                </div>
+                <div class="column span-24 last" style="min-height: 40%; _height:40%;" id="area_corpo">
+                    <span id="messages:growlMsg">                        
+                    </span>
+                    <script type="text/javascript">jQuery(function () {
+                                                    });</script>
+                    <script type="text/javascript">jQuery(function () {
+                            popupAguarde = new PrimeFaces.widget.Dialog('panAguarde2', {autoOpen: false, minHeight: 0, width: 190, height: 55, draggable: false, modal: true, resizable: false, closable: false});
+                        });</script><span id="painelDialogoAviso">
+                        <script type="text/javascript">jQuery(function () {
+                                popupAviso = new PrimeFaces.widget.Dialog('dialogoAviso', {autoOpen: false, minHeight: 0, modal: true, resizable: false, closeOnEscape: false, closable: false});
+                            });</script><div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialogoAviso" id="dialogoAviso" style="display: none; z-index: 1000; outline: 0px;">
+                            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                                <span class="ui-dialog-title" id="ui-dialog-title-dialogoAviso">InformaÃƒÂ§ÃƒÂ£o</span>
+                                <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;">
+                                    <span class="ui-icon ui-icon-closethick">close</span></a></div>
+                            <div style="" class="ui-dialog-content ui-widget-content">
+                                <form id="formPopupAviso" name="formPopupAviso" method="post" action="/novoscdp/pages/main.xhtml" enctype="application/x-www-form-urlencoded">
+                                    <input type="hidden" name="formPopupAviso" value="formPopupAviso"/>
+                                    <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="6377146524913919677:7836081229798639944" autocomplete="off"/>
+                                </form>
+                            </div>
+                        </div>
+                    </span>
+                    <script type="text/javascript">
+                        // Variavel global que diz se tem uma mensagem de erro sendo mostrada na tela
+                        var temMensagemErro = false;
+
+                        // Variavel global que diz se tem uma sub mensagem de erro sendo mostrada na em algum quadro da tela 
+                        var temSubMensagemErro = false;
+
+                        // Essa variavel global diz se vai impedir que a tela de aguarde seja mostrada ou nÃƒÂ£o. Isso ÃƒÂ© necessÃƒÂ¡rio
+                        // pois nos componentes de autocomplete a tela de aguarde faz com que eles percam o foco inviabilizando 
+                        // o funcionamento correto.
+                        var vMostrarAguarde = true;
+
+
+                        // Leva a tela para a mensagem de erro quando ela existir 
+                        function verificarMensagem() {
+                            var dialogo = jQuery('#mensagemDialog');
+                            var conteudoMensagem = dialogo.text();
+                            temMensagemErro = (conteudoMensagem != '');
+
+                            if (temMensagemErro) {
+                                // Caso exista uma sub mensagem de erro, o foco ficarÃƒÂ¡ nela e nÃƒÂ£o mais na mensagem principal.
+                                if (!temSubMensagemErro) {
+                                    jQuery('html,body').animate({scrollTop: 0}, 1000);
+                                }
+                            }
+                        }
+
+                        //Deve ser chamado pra mostrar a tela de aguarde. 
+                        //Se encarrega de abafar excecoes que quebrariam os scripts do sistema.
+                        function mostrarMensagem() {
+                            try {
+                                if (vMostrarAguarde) {
+                                    popupAguarde.show();
+                                }
+                            } catch (err) {
+                                //Abafa erro de proposito
+                            }
+
+                            return true;
+                        }
+
+                        //Deve ser chamado pra esconder a tela de aguarde. 
+                        //Se encarrega de abafar excecoes que quebrariam os scripts do sistema.
+                        function esconderMensagem() {
+                            try {
+                                popupAguarde.hide();
+
+                            } catch (err) {
+                                //Abafa erro de proposito
+                            }
+
+                            return true;
+                        }
+
+
+                        jQuery(document).ready(function () {
+                            //sempre que carrega uma tela volta pro valor default que ÃƒÂ© mostrar o aguarde.
+                            vMostrarAguarde = true;
+
+                            //Adiciona a tela de aguarde no submit de todos os forms do sistema.
+                            jQuery('form').submit(function () {
+                                mostrarMensagem();
+                                return true;
+                            });
+
+                            //Adiciona o aguarde na mudanÃƒÂ§a do menu.
+                            jQuery('.wijmo-wijmenu-link').click(function () {
+                                if (!jQuery(this).attr('onclick')) {
+                                    if (jQuery(this).attr("href") != "javascript:void(0)") {
+                                        mostrarMensagem();
+                                    }
+                                }
+
+                                return true;
+                            });
+
+                        });
+
+                    </script>
+                    <script type="text/javascript">
+                        // <![CDATA[
+
+                        function gotoSessaoExpirada() {
+                            window.location = "/novoscdp/pages/sessao_expirada.xhtml";
+                        }
+
+                        function gotoTelaPrincipal() {
+                            window.location = "/novoscdp/pages/main.xhtml";
+                        }
+
+                        function gotoTelaPrincipalAgencia() {
+                            window.location = "/novoscdp/pages/agencia/main.xhtml";
+                        }
+
+
+                        jQuery(document).ready(function () {
+
+                            //Excecoes causadas numa requisiÃƒÂ§ÃƒÂ£o ajax com resultado parcial muitas vezes sao desprezadas, esse trecho trata esse tipo de mensagem 
+                            //para que elas nao sejam abafadas.
+                            jQuery("body").ajaxSuccess(function (e, xhr, settings) {
+                                if (xhr.responseText.indexOf('<error><error-name>') > 0 && xhr.responseText.indexOf('LazyInitializ') < 0) {
+                                    var texto = 'Ocorreu um problema na requisiÃƒÂ§ÃƒÂ£o:\n ' + xhr.responseXML.getElementsByTagName('error-message')[0].firstChild.data;
+                                    alert(texto);
+                                }
+                            });
+
+                            jQuery("body").bind("ajaxError", function (e, xhr, settings, thrownError) {
+
+                                //Se a sessÃƒÂ£o expirou!!
+                                if (xhr.status == 403) {
+                                    gotoSessaoExpirada();
+
+                                    //O caso 0	
+                                } else if (xhr.status == 0) {
+                                    //Esse caso indica que o usuÃƒÂ¡rio foi para outra pÃƒÂ¡gina antes da requisiÃƒÂ§ÃƒÂ£o ajax completa.				    	
+
+                                    //Se ocorreu qualquer outro erro.
+                                } else {
+                                    var texto = 'Ocorreu um problema na requisiÃƒÂ§ÃƒÂ£o:\n ';
+                                    texto += extrairErro(xhr, thrownError);
+
+                                    alert(texto);
+                                }
+                            });
+
+                        });
+
+
+                        function extrairErro(xhr, thrownError) {
+                            console.log(xhr.responseText);
+
+                            if (thrownError != null) {
+                                return thrownError;
+                            } else {
+                                return xhr.responseXML.getElementsByTagName('error-message')[0].firstChild.data;
+                            }
+                        }
+
+
+                        //Sempre depois de fazer uma requisiÃƒÂ§ÃƒÂ£o ajax, verifica se existem mensagens duplicadas e as remove.	
+                        jQuery("body").ajaxComplete(function (e, jqxhr, settings) {
+
+                            //Desconsidera requisiÃƒÂ§ÃƒÂµes ajax feitas pelo systemMessenger que sÃƒÂ£o muito constantes.
+                            if (settings.url.indexOf('/javax.faces.resource/jsf.js.xhtml?ln=javax.faces') < 0) {
+                                tratarDuplicatas();
+                            }
+
+                        });
+
+
+
+                        //Remove todas as mensagens de erro duplicadas.		
+                        function tratarDuplicatas() {
+
+                            var itens = jQuery(".ui-growl-item-container").get();
+
+                            if (itens.length > 1) {
+                                var textos = new Array();
+                                for (var x = 0; x < itens.length; x++) {
+                                    var itemJQuery = jQuery(".ui-growl").find("#" + itens[x].id);
+                                    textos.push(itemJQuery.find("p").text());
+                                }
+
+                                textos = jQuery.unique(textos);
+
+                                for (x = 0; x < textos.length; x++) {
+                                    var encontrados = jQuery("p:contains('" + textos[x] + "')").parent().parent().parent();
+
+                                    for (var y = encontrados.length - 1; y > 0; y--) {
+                                        encontrados[y].parentNode.removeChild(encontrados[y]);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        // ]]>	
+                    </script>
+                    <div id="j_idt234">
+                        <div id="j_idt234_start" style="display:none">
+                            <div id="panAguarde" class="ui-widget ui-widget-content ui-corner-all ui-dialog">
+                                <img src="resources/images/aguarde.gif" height="16" style="display:inline;" title="Aguarde..." width="16"/>
+                                <label style="display:inline;">Aguarde...</label>
+                            </div></div><div id="j_idt234_complete" style="display:none">                    
+                        </div>                    
+                    </div>
+                    <script type="text/javascript">widget_j_idt234 = new PrimeFaces.widget.AjaxStatus('j_idt234');
+                        widget_j_idt234.bindFacet('ajaxStart', 'start');
+                        widget_j_idt234.bindCallback('ajaxSuccess', function () {
+                            verificarMensagem()
+                        });
+                        widget_j_idt234.bindFacet('ajaxComplete', 'complete');</script>
+                    <div id="boxBody" style="min-height: 70%; _height:70%;">
+                        <span id="infoMessagesPanel:panelInfoMessages"></span>
+                        <div class="main_logo">
+                            <img id="imagemLogo" src="resources/images/marca.gif" height="160" width="320"/>
+                        </div>
+                        <div style="height: 70%">
+                            <div id="cast" style="height: 400px; overflow:hidden; position:relative; background-color:#a7d5f3; display: none">
+
+                                <div id="blocoLogo" class="serproLogo" style="display: none">
+                                    <img src="resources/images/logo_serpro.png" width="400" height="149"/>
+                                </div> 
+                                <div class="aviao">
+                                    <div style="float:left">
+                                        <img src="resources/images/aviao.png" width="250" height="108"/></div>
+                                    <div style="float:right; margin-top:-110px">
+                                        <img src="resources/images/rope.png" width="66" height="80"/></div>
+                                </div>
+
+                                <div id="faixa">
+                                    <div id="f0" class="itemFaixa">Equipe de Desenv.:</div>			
+                                    <div id="f1" class="itemFaixa">Adolfo Cavalcante</div>
+                                    <div id="f2" class="itemFaixa">Alessandra Vinhas</div>
+                                    <div id="f3" class="itemFaixa">Carlos Eduardo Texeira</div>
+                                    <div id="f4" class="itemFaixa">ClÃƒÂ¡udio Neiva</div>
+                                    <div id="f5" class="itemFaixa">Danilo Viana</div>
+                                    <div id="f6" class="itemFaixa">Eduardo Edington</div>
+                                    <div id="f7" class="itemFaixa">Eudes Andrade</div>
+                                    <div id="f8" class="itemFaixa">Igor Valadares</div>
+                                    <div id="f9" class="itemFaixa">Isabel Nadine</div>
+                                    <div id="f10" class="itemFaixa">Joaci Justino</div>
+                                    <div id="f11" class="itemFaixa">LÃƒÂ­via Baqueiro</div>
+                                    <div id="f12" class="itemFaixa">Leonardo Cunha</div>
+                                    <div id="f13" class="itemFaixa">Leonardo Soares</div>
+                                    <div id="f14" class="itemFaixa">Lucas Salles</div>
+                                    <div id="f15" class="itemFaixa">Marcelo Curi</div>
+                                    <div id="f16" class="itemFaixa">Paula Antunes</div>
+                                    <div id="f17" class="itemFaixa">Rafael Miranda</div>
+                                    <div id="f18" class="itemFaixa">RogÃƒÂ©rio Nobre</div>
+                                    <div id="f19" class="itemFaixa">Sandro Cordeiro</div>							
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            // <![CDATA[
+
+                            function verificarPresencaCampoObrigatorio() {
+                                if (jQuery(".campoObrigatorio").get().length > 0) {
+                                    jQuery("#legandaCampoObrigatorio").css('display', 'block');
+                                } else {
+                                    jQuery("#legandaCampoObrigatorio").css('display', 'none');
+                                }
+                            }
+
+                            jQuery(document).ready(function () {
+                                verificarPresencaCampoObrigatorio();
+                            });
+
+                            // ]]>
+                        </script>
+
+                        <span id="legandaCampoObrigatorio" style="display: none">
+                            * Campos de preechimento obrigatÃƒÂ³rio.<br/>
+                        </span>
+                    </div>
+                    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-panAguarde2" id="panAguarde2" style="display: none; z-index: 1000; outline: 0px;">
+                        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                            <span class="ui-dialog-title" id="ui-dialog-title-panAguarde2">&nbsp;</span>
+                            <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;">
+                                <span class="ui-icon ui-icon-closethick">close</span></a></div>
+                        <div style="" class="ui-dialog-content ui-widget-content">
+                            <img src="/novoscdp/resources/images/aguarde.gif" height="16" style="display:inline;" title="Aguarde..." width="16"/>
+                            <label style="display:inline;" tabindex="-1">Aguarde...</label>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>	

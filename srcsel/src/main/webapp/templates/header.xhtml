@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition> 
+                <div class="column span-24 last" style="height: 78px;" id="area_topo">
+                    <div id="topoPadrao" class="borda-redonda" style="background-color:#B1C8D6; border-width: 1px; border-color:#88A4B5; border-style: solid; height: 66px; margin: 5px 1px 5px 1px;">
+                        Saudação
+                        <br/>
+                        Logout
+                    </div>
+                </div>
+
+            <div class="column span-24 last" id="area_menu">
+                <form id="formMenu" name="formMenu" method="post" action="/novoscdp/pages/main.xhtml" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="formMenu" value="formMenu"/>
+                    <div id="formMenu:scdpMenu">
+                        <div class="ui-widget ui-widget-content wijmo-wijmenu ui-corner-all ui-helper-clearfix wijmo-wijmenu-horizontal" aria-activedescendant="ui-active-menuitem" role="menubar">
+                            <div class="scrollcontainer checkablesupport">
+                                <ul id="formMenu:scdpMenu_menu" class="wijmo-wijmenu-list ui-helper-reset" tabindex="0" style="display: block;">
+                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all">
+                                            <span class="wijmo-wijmenu-text">
+                                                <span class="wijmo-wijmenu-text">Meus Dados</span>                                                        
+                                            </span>
+                                            <span class="ui-icon ui-icon-triangle-1-s">                                                    
+                                            </span>
+                                        </a>
+                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 0px; top: 24px; position: absolute;" aria-hidden="true">
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Cadastrar/Alterar Viagem</span>                                                                
+                                                    </span></a>
+                                            </li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/cancelar_viagem/cancelar_viagem_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Cancelar Viagem</span></span></a></li>
+
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true" style="">
+                                                <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Passagem</span>
+
+                                                    </span><span class="ui-icon ui-icon-triangle-1-e"></span></a>
+                                                <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 178.734px; top: 0.171875px; position: absolute;" aria-hidden="true">
+                                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text">
+                                                                <span class="wijmo-wijmenu-text">Reservar Passagem</span></span>
+                                                            <span class="ui-icon ui-icon-triangle-1-e"></span></a>
+                                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none;" aria-hidden="true">
+                                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                                <a href="/novoscdp/pages/reservar_passagem/reservar_passagem_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">PCDP</span></span></a></li>
+                                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                                <a href="/novoscdp/pages/reservar_passagem/viagem_grupo_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">PCDP Grupo</span></span></a></li></ul>
+                                                    </li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/cancelar_bilhete/cancelar_bilhete_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text">
+                                                                <span class="wijmo-wijmenu-text">Cancelar Bilhete</span>                                                                   
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/emissoes_pendentes/emissoes_pendentes_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text">
+                                                                <span class="wijmo-wijmenu-text">EmissÃµes Pendentes</span>                                                                    
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true" style="">
+                                                <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Viagem</span>                                                            
+                                                    </span>
+                                                    <span class="ui-icon ui-icon-triangle-1-e">
+                                                    </span>
+                                                </a>
+                                                <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 178.734px; top: -0.109375px; position: absolute;" aria-hidden="true">
+                                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/complementar_viagem/complementar_viagem_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text">
+                                                                <span class="wijmo-wijmenu-text">Antecipar/Prorrogar/Complementar Viagem</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/copiar_viagem/copiar_viagem_edit.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text">
+                                                                <span class="wijmo-wijmenu-text">Copiar Viagem</span></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all">
+                                            <span class="wijmo-wijmenu-text">
+                                                <span class="wijmo-wijmenu-text">PRESTAÃ‡ÃƒO DE CONTAS</span></span>
+                                            <span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 0px; top: 24px; position: absolute;" aria-hidden="true">
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/prestacao_contas/prestacao_contas_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">PrestaÃ§Ã£o de Contas</span></span></a>
+                                            </li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/prestacao_contas/devolucao_valores/devolucao_valores_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">DevoluÃ§Ã£o de Valores</span></span></a>
+                                            </li></ul></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true" style="">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">CONSULTAS</span>
+
+                                            </span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 0px; top: 24px; position: absolute;" aria-hidden="true">
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_solicitacao/consultar_situacao_solicitacao_filter.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">SituaÃ§Ã£o da SolicitaÃ§Ã£o</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_empenho/consultar_saldo_empenho.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Saldo de Empenho</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_prestacao_contas_pendente/consultar_prestacao_contas_pendente.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">PrestaÃ§Ã£o de contas pendentes por proposto</span>
+
+                                                    </span></a></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_limite_recurso_orcamentario/consultar_limite_recurso_orcamentario.xhtml" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Limite de Recursos OrÃ§amentÃ¡rios</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/tabela/feriado_nacional/feriado_nacional_consulta_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Feriado Nacional</span></span></a>
+                                            </li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_pessoa/consultar_pessoa_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Pessoa</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_orgao/consultar_orgao_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Ã“rgÃ£o</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/usuario/consultar_usuario_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">UsuÃ¡rio</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_diarias/consultar_diarias_por_cargo_patente.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">DiÃ¡rias Por Cargo/Patente</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/consultar_diarias/consultar_diarias_internacionais.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">DiÃ¡rias Internacionais</span></span></a></li></ul></li>
+                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true" style="">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text">
+                                                <span class="wijmo-wijmenu-text">RELATÃ“RIOS</span></span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none; left: 0px; top: 24px; position: absolute;" aria-hidden="true">
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/solicitacoes_emissao/orgao_consulta_solicitacoes_emissao.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Bilhetes de passagens</span></span></a></li>
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/reembolso_bilhete/orgao_relatorio_reembolso_bilhete.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Reembolso de bilhetes</span></span></a>
+                                            </li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/proposto/relatorio_proposto.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Proposto</span></span>
+                                                </a></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/relatorio_pcdps_por_orgao.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">PCDPs por Ã“rgÃ£o</span>
+
+                                                    </span></a></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/teto_orcamentario/relatorio_teto_orcamentario.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Teto OrÃ§amentÃ¡rio</span></span></a>
+                                            </li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="/novoscdp/pages/relatorio/relatorio_viagem.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Viagem</span></span></a></li>
+                                        </ul></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text">
+                                                <span class="wijmo-wijmenu-text">GESTÃƒO</span></span><span class="ui-icon ui-icon-triangle-1-s"></span>
+                                        </a><ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" aria-hidden="true" style="display: none; left: 0px; top: 24px; position: absolute;">
+                                            <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                                <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text">
+                                                        <span class="wijmo-wijmenu-text">Tabelas BÃ¡sicas</span></span>
+                                                    <span class="ui-icon ui-icon-triangle-1-e"></span></a>
+                                                <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" style="display: none;"><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/tabela/cadastrar_pessoa_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Pessoa</span></span></a></li>
+                                                    <li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                        <a href="/novoscdp/pages/tabela/prestadora_servico/prestadora_servico_list.xhtml" class="wijmo-wijmenu-link ui-corner-all">
+                                                            <span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">Prestadora de ServiÃ§o</span></span></a></li></ul></li>
+                                        </ul></li><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all wijmo-wijmenu-parent" aria-haspopup="true">
+                                        <a href="javascript:void(0)" class="wijmo-wijmenu-link ui-corner-all"><span class="wijmo-wijmenu-text"><span class="wijmo-wijmenu-text">SCDP</span></span>
+                                            <span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                        <ul class="wijmo-wijmenu-list ui-widget-content ui-corner-all ui-helper-clearfix wijmo-wijmenu-child ui-helper-reset" role="menu" aria-activedescendant="ui-active-menuitem" aria-hidden="true" style="display: none;"><li role="menuitem" class="ui-widget wijmo-wijmenu-item ui-state-default ui-corner-all">
+                                                <a href="http://www.scdp.gov.br/" onclick="atualizaMenu()" target="_blank" class="wijmo-wijmenu-link ui-corner-all">
+                                                    <span class="wijmo-wijmenu-text">www.scdp.gov.br</span></a></li></ul></li></ul></div></div></div>
+                    <script type="text/javascript">widget_formMenu_scdpMenu = new PrimeFaces.widget.Menubar('formMenu:scdpMenu', {autoSubmenuDisplay: true, animated: 'slide', showDuration: 100, hideDuration: 100});</script>
+                    <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-8909611628744830978:4585605065973972979" autocomplete="off"/>
+                </form>
+            </div>
+        </ui:composition>	
+    </body>
+</html>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition> 
+            
+            <div class="column span-24 last" style="min-height: 40%; _height:40%;" id="area_corpo"><span id="messages:growlMsg"></span><script type="text/javascript">jQuery(function () {
+                });</script><script type="text/javascript">jQuery(function () {
+                        popupAguarde = new PrimeFaces.widget.Dialog('panAguarde2', {autoOpen: false, minHeight: 0, width: 190, height: 55, draggable: false, modal: true, resizable: false, closable: false});
+                    });</script><span id="painelDialogoAviso"><script type="text/javascript">jQuery(function () {
+                            popupAviso = new PrimeFaces.widget.Dialog('dialogoAviso', {autoOpen: false, minHeight: 0, modal: true, resizable: false, closeOnEscape: false, closable: false});
+                        });</script><div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialogoAviso" id="dialogoAviso" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialogoAviso">InformaÃ§Ã£o</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;"><span class="ui-icon ui-icon-closethick">close</span></a></div><div style="" class="ui-dialog-content ui-widget-content">
+                            <form id="formPopupAviso" name="formPopupAviso" method="post" action="/novoscdp/pages/main.xhtml" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="formPopupAviso" value="formPopupAviso">
+                                    <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="2136924842641048792:-3680827650609994066" autocomplete="off">
+                                        </form></div></div></span>
+
+
+                                        <script type="text/javascript">
+                                            // Variavel global que diz se tem uma mensagem de erro sendo mostrada na tela
+                                            var temMensagemErro = false;
+
+                                            // Variavel global que diz se tem uma sub mensagem de erro sendo mostrada na em algum quadro da tela 
+                                            var temSubMensagemErro = false;
+
+                                            // Essa variavel global diz se vai impedir que a tela de aguarde seja mostrada ou nÃ£o. Isso Ã© necessÃ¡rio
+                                            // pois nos componentes de autocomplete a tela de aguarde faz com que eles percam o foco inviabilizando 
+                                            // o funcionamento correto.
+                                            var vMostrarAguarde = true;
+
+
+                                            // Leva a tela para a mensagem de erro quando ela existir 
+                                            function verificarMensagem() {
+                                                var dialogo = jQuery('#mensagemDialog');
+                                                var conteudoMensagem = dialogo.text();
+                                                temMensagemErro = (conteudoMensagem != '');
+
+                                                if (temMensagemErro) {
+                                                    // Caso exista uma sub mensagem de erro, o foco ficarÃ¡ nela e nÃ£o mais na mensagem principal.
+                                                    if (!temSubMensagemErro) {
+                                                        jQuery('html,body').animate({scrollTop: 0}, 1000);
+                                                    }
+                                                }
+                                            }
+
+                                            //Deve ser chamado pra mostrar a tela de aguarde. 
+                                            //Se encarrega de abafar excecoes que quebrariam os scripts do sistema.
+                                            function mostrarMensagem() {
+                                                try {
+                                                    if (vMostrarAguarde) {
+                                                        popupAguarde.show();
+                                                    }
+                                                } catch (err) {
+                                                    //Abafa erro de proposito
+                                                }
+
+                                                return true;
+                                            }
+
+                                            //Deve ser chamado pra esconder a tela de aguarde. 
+                                            //Se encarrega de abafar excecoes que quebrariam os scripts do sistema.
+                                            function esconderMensagem() {
+                                                try {
+                                                    popupAguarde.hide();
+
+                                                } catch (err) {
+                                                    //Abafa erro de proposito
+                                                }
+
+                                                return true;
+                                            }
+
+
+                                            jQuery(document).ready(function () {
+                                                //sempre que carrega uma tela volta pro valor default que Ã© mostrar o aguarde.
+                                                vMostrarAguarde = true;
+
+                                                //Adiciona a tela de aguarde no submit de todos os forms do sistema.
+                                                jQuery('form').submit(function () {
+                                                    mostrarMensagem();
+                                                    return true;
+                                                });
+
+                                                //Adiciona o aguarde na mudanÃ§a do menu.
+                                                jQuery('.wijmo-wijmenu-link').click(function () {
+                                                    if (!jQuery(this).attr('onclick')) {
+                                                        if (jQuery(this).attr("href") != "javascript:void(0)") {
+                                                            mostrarMensagem();
+                                                        }
+                                                    }
+
+                                                    return true;
+                                                });
+
+                                            });
+
+                                        </script>
+                                        <script type="text/javascript">
+                                            // <![CDATA[
+
+                                            function gotoSessaoExpirada() {
+                                                window.location = "/novoscdp/pages/sessao_expirada.xhtml";
+                                            }
+
+                                            function gotoTelaPrincipal() {
+                                                window.location = "/novoscdp/pages/main.xhtml";
+                                            }
+
+                                            function gotoTelaPrincipalAgencia() {
+                                                window.location = "/novoscdp/pages/agencia/main.xhtml";
+                                            }
+
+
+                                            jQuery(document).ready(function () {
+
+                                                //Excecoes causadas numa requisiÃ§Ã£o ajax com resultado parcial muitas vezes sao desprezadas, esse trecho trata esse tipo de mensagem 
+                                                //para que elas nao sejam abafadas.
+                                                jQuery("body").ajaxSuccess(function (e, xhr, settings) {
+                                                    if (xhr.responseText.indexOf('<error><error-name>') > 0 && xhr.responseText.indexOf('LazyInitializ') < 0) {
+                                                        var texto = 'Ocorreu um problema na requisiÃ§Ã£o:\n ' + xhr.responseXML.getElementsByTagName('error-message')[0].firstChild.data;
+                                                        alert(texto);
+                                                    }
+                                                });
+
+                                                jQuery("body").bind("ajaxError", function (e, xhr, settings, thrownError) {
+
+                                                    //Se a sessÃ£o expirou!!
+                                                    if (xhr.status == 403) {
+                                                        gotoSessaoExpirada();
+
+                                                        //O caso 0	
+                                                    } else if (xhr.status == 0) {
+                                                        //Esse caso indica que o usuÃ¡rio foi para outra pÃ¡gina antes da requisiÃ§Ã£o ajax completa.				    	
+
+                                                        //Se ocorreu qualquer outro erro.
+                                                    } else {
+                                                        var texto = 'Ocorreu um problema na requisiÃ§Ã£o:\n ';
+                                                        texto += extrairErro(xhr, thrownError);
+
+                                                        alert(texto);
+                                                    }
+                                                });
+
+                                            });
+
+
+                                            function extrairErro(xhr, thrownError) {
+                                                console.log(xhr.responseText);
+
+                                                if (thrownError != null) {
+                                                    return thrownError;
+                                                } else {
+                                                    return xhr.responseXML.getElementsByTagName('error-message')[0].firstChild.data;
+                                                }
+                                            }
+
+
+                                            //Sempre depois de fazer uma requisiÃ§Ã£o ajax, verifica se existem mensagens duplicadas e as remove.	
+                                            jQuery("body").ajaxComplete(function (e, jqxhr, settings) {
+
+                                                //Desconsidera requisiÃ§Ãµes ajax feitas pelo systemMessenger que sÃ£o muito constantes.
+                                                if (settings.url.indexOf('/javax.faces.resource/jsf.js.xhtml?ln=javax.faces') < 0) {
+                                                    tratarDuplicatas();
+                                                }
+
+                                            });
+
+
+
+                                            //Remove todas as mensagens de erro duplicadas.		
+                                            function tratarDuplicatas() {
+
+                                                var itens = jQuery(".ui-growl-item-container").get();
+
+                                                if (itens.length > 1) {
+                                                    var textos = new Array();
+                                                    for (var x = 0; x < itens.length; x++) {
+                                                        var itemJQuery = jQuery(".ui-growl").find("#" + itens[x].id);
+                                                        textos.push(itemJQuery.find("p").text());
+                                                    }
+
+                                                    textos = jQuery.unique(textos);
+
+                                                    for (x = 0; x < textos.length; x++) {
+                                                        var encontrados = jQuery("p:contains('" + textos[x] + "')").parent().parent().parent();
+
+                                                        for (var y = encontrados.length - 1; y > 0; y--) {
+                                                            encontrados[y].parentNode.removeChild(encontrados[y]);
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+
+                                            // ]]>	
+                                        </script><div id="j_idt234"><div id="j_idt234_start" style="display:none">
+                                                <div id="panAguarde" class="ui-widget ui-widget-content ui-corner-all ui-dialog"><img src="/novoscdp/resources/images/aguarde.gif" height="16" style="display:inline;" title="Aguarde..." width="16"><label style="display:inline;">Aguarde...</label>
+                                                </div></div><div id="j_idt234_complete" style="display:none"></div></div><script type="text/javascript">widget_j_idt234 = new PrimeFaces.widget.AjaxStatus('j_idt234');
+                                                    widget_j_idt234.bindFacet('ajaxStart', 'start');
+                                                    widget_j_idt234.bindCallback('ajaxSuccess', function () {
+                                                        verificarMensagem()
+                                                    });
+                                                    widget_j_idt234.bindFacet('ajaxComplete', 'complete');</script>
+                                        <div id="boxBody" style="min-height: 70%; _height:70%;"><span id="infoMessagesPanel:panelInfoMessages"></span>
+
+                                            <div class="main_logo"><img id="imagemLogo" src="/novoscdp/resources/images/marca.gif" height="160" width="320">
+                                            </div>
+
+                                            <div style="height: 70%">
+                                                <div id="cast" style="height: 400px; overflow:hidden; position:relative; background-color:#a7d5f3; display: none">
+
+                                                    <div id="blocoLogo" class="serproLogo" style="display: none">
+                                                        <img src="/novoscdp/resources/images/logo_serpro.png" width="400" height="149">
+                                                    </div> 
+
+                                                    <div class="aviao">
+                                                        <div style="float:left"><img src="/novoscdp/resources/images/aviao.png" width="250" height="108"></div>
+                                                        <div style="float:right; margin-top:-110px"><img src="/novoscdp/resources/images/rope.png" width="66" height="80"></div>
+                                                    </div>
+
+                                                    <div id="faixa">
+                                                        <div id="f0" class="itemFaixa">Equipe de Desenv.:</div>			
+                                                        <div id="f1" class="itemFaixa">Adolfo Cavalcante</div>
+                                                        <div id="f2" class="itemFaixa">Alessandra Vinhas</div>
+                                                        <div id="f3" class="itemFaixa">Carlos Eduardo Texeira</div>
+                                                        <div id="f4" class="itemFaixa">ClÃ¡udio Neiva</div>
+                                                        <div id="f5" class="itemFaixa">Danilo Viana</div>
+                                                        <div id="f6" class="itemFaixa">Eduardo Edington</div>
+                                                        <div id="f7" class="itemFaixa">Eudes Andrade</div>
+                                                        <div id="f8" class="itemFaixa">Igor Valadares</div>
+                                                        <div id="f9" class="itemFaixa">Isabel Nadine</div>
+                                                        <div id="f10" class="itemFaixa">Joaci Justino</div>
+                                                        <div id="f11" class="itemFaixa">LÃ­via Baqueiro</div>
+                                                        <div id="f12" class="itemFaixa">Leonardo Cunha</div>
+                                                        <div id="f13" class="itemFaixa">Leonardo Soares</div>
+                                                        <div id="f14" class="itemFaixa">Lucas Salles</div>
+                                                        <div id="f15" class="itemFaixa">Marcelo Curi</div>
+                                                        <div id="f16" class="itemFaixa">Paula Antunes</div>
+                                                        <div id="f17" class="itemFaixa">Rafael Miranda</div>
+                                                        <div id="f18" class="itemFaixa">RogÃ©rio Nobre</div>
+                                                        <div id="f19" class="itemFaixa">Sandro Cordeiro</div>							
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <script type="text/javascript">
+                                                // <![CDATA[
+
+                                                function verificarPresencaCampoObrigatorio() {
+                                                    if (jQuery(".campoObrigatorio").get().length > 0) {
+                                                        jQuery("#legandaCampoObrigatorio").css('display', 'block');
+                                                    } else {
+                                                        jQuery("#legandaCampoObrigatorio").css('display', 'none');
+                                                    }
+                                                }
+
+                                                jQuery(document).ready(function () {
+                                                    verificarPresencaCampoObrigatorio();
+                                                });
+
+                                                // ]]>
+                                            </script>
+
+                                            <span id="legandaCampoObrigatorio" style="display: none">
+                                                * Campos de preechimento obrigatÃ³rio.<br/>
+                                            </span>
+                                        </div>
+                                        <div class="ui-dialog ui-widget ui-widget-content ui-corner-all " tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-panAguarde2" id="panAguarde2" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-panAguarde2">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;"><span class="ui-icon ui-icon-closethick">close</span></a></div><div style="" class="ui-dialog-content ui-widget-content"><img src="/novoscdp/resources/images/aguarde.gif" height="16" style="display:inline;" title="Aguarde..." width="16"><label style="display:inline;" tabindex="-1">Aguarde...</label></div></div></div>
+                                        </ui:composition>	
+                                        </body>
+                                        </html>
